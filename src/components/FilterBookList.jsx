@@ -29,7 +29,10 @@ class FilterBookList extends React.Component {
                         </Form.Group>
                     </Form>
                 </Container>
-                <BookList books={this.state.search} />
+
+                <Container fluid>
+                    <BookList books={this.state.search} />
+                </Container>
             </>
         )
     }
