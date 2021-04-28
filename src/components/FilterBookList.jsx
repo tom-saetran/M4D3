@@ -15,8 +15,6 @@ class FilterBookList extends React.Component {
         this.setState({ search: this.getFilteredBooks(event) })
     }
 
-    renderBooks = books => {}
-
     getFilteredBooks = event => FantasyBooks.filter(book => book.title.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase()))
 
     render() {
@@ -31,10 +29,7 @@ class FilterBookList extends React.Component {
                         </Form.Group>
                     </Form>
                 </Container>
-
-                <Container>
-                    <BookList books={this.state.search} />
-                </Container>
+                <BookList books={this.state.search} />
             </>
         )
     }
