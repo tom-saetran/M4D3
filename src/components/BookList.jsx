@@ -3,6 +3,8 @@ import SingleBook from "./SingleBook"
 const BookList = props => {
     let result = ""
 
+    console.log(props)
+
     try {
         result = props.books.map(book => <SingleBook book={book} />)
     } catch (error) {

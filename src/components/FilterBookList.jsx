@@ -13,7 +13,9 @@ class FilterBookList extends React.Component {
 
     updateFilterFromSearch = event => {
         event.preventDefault()
-        return <BookList books={this.getFilteredBooks(event)} />
+        let result = this.getFilteredBooks(event)
+        console.log(result)
+        return <BookList books={result} />
     }
 
     getFilteredBooks = event => FantasyBooks.filter(book => book.title.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase()))
