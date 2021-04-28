@@ -8,12 +8,16 @@ class SingleBook extends React.Component {
         selected: false
     }
 
+    toggleBorder = () => {
+        this.setState({ selected: !this.state.selected })
+    }
+
     render() {
         return (
             <>
                 <Container>
                     <CardColumns>
-                        <Card>
+                        <Card className={this.state.selected ? "border border-danger" : ""} onClick={this.toggleBorder}>
                             <Card.Img variant="top" src={this.props.book.img} />
                             <Card.Body>
                                 <Card.Title>{this.props.book.title}</Card.Title>
