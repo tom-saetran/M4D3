@@ -1,15 +1,23 @@
+import React from "react"
 import SingleBook from "./SingleBook"
+import Fantasy from "../data/fantasy.json"
 
-const BookList = props => {
-    let result = ""
+class BookList extends React.Component {
+    state = {
+        books: Fantasy
+    }
 
-    try {
-        result = props.books.map(book => <SingleBook book={book} key={book.asin} />)
-    } catch (error) {
-        console.log("oh no error, beep baap boop")
-        return null
-    } finally {
-        return result
+    result = ""
+
+    render() {
+        try {
+            this.result = this.props.books.map(book => <SingleBook book={book} key={book.asin} />)
+        } catch (error) {
+            console.log("oh no error, beep baap boop", error)
+            return null
+        } finally {
+            return this.result
+        }
     }
 }
 

@@ -6,8 +6,8 @@ import FilterBookList from "./components/FilterBookList"
 const App = () => (
     <>
         <FilterBookList />
-        <WarningSign text="ERROR OH NO" />
-        <MyBadge variant="warning" text="Something cool" />
+        {/* <WarningSign text="ERROR OH NO" /> */}
+        {/* <MyBadge variant="warning" text="Something cool" /> */}
     </>
 )
 

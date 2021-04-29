@@ -25,7 +25,7 @@ class FilterBookList extends React.Component {
                         <Form.Group controlId="filter-books">
                             <Form.Label>Search...</Form.Label>
                             <Form.Control type="text" placeholder="Search..." onChange={this.updateFilterFromSearch} />
-                            <Form.Text className="text-muted">Results will update in real time [insert pikachu gasping gif here]</Form.Text>
+                            <Form.Text className="text-muted">Results will update in real time</Form.Text>
                         </Form.Group>
                     </Form>
                 </Container>
