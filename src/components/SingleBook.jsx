@@ -36,8 +36,8 @@ const BookModal = props => {
             <Modal.Body className="d-flex flex-column">
                 <h4 className="text-center">{props.book.title}</h4>
                 <img style={{ height: "300px", width: "auto" }} className="img d-block mx-auto pb-2" src={props.book.img} alt={props.book.asin} />
+                <CommentsList className="pb-2" book={props.book.asin} />
                 <AddComment book={props.book.asin} />
-                <CommentsList book={props.book.asin} />
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={props.onHide}>Close</Button>
