@@ -1,6 +1,4 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-import WarningSign from "./components/WarningSign"
-import MyBadge from "./components/MyBadge"
 import FilterBookList from "./components/FilterBookList"
 
 const App = () => (

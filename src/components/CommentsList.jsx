@@ -1,5 +1,4 @@
 import React from "react"
-import Container from "react-bootstrap/Container"
 
 class CommentsList extends React.Component {
     state = {
@@ -7,6 +6,10 @@ class CommentsList extends React.Component {
     }
 
     async componentDidMount() {
+        this.get()
+    }
+
+    get = async () => {
         let result = ""
         try {
             result = await fetch("https://striveschool-api.herokuapp.com/api/comments/" + this.props.book, {
