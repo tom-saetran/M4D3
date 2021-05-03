@@ -19,21 +19,23 @@ class CommentsList extends React.Component {
             return null
         } finally {
             this.setState({ comments: result })
-            console.log(this.state.comments)
         }
     }
 
     add = async target => {
         let payload = {
             comment: target.comment,
-            rate: target.rate,
-            asin: target.asin
+            rate: target.rating,
+            elementId: target.asin
         }
+
+        console.log(payload)
 
         try {
             await fetch("https://striveschool-api.herokuapp.com/api/comments/", {
                 method: "POST",
                 headers: {
+                    "Content-type": "application/json",
                     Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDgwMGU5Y2IxZjBmYjAwMTVkOTE3MGMiLCJpYXQiOjE2MTkwMDUwODQsImV4cCI6MTYyMDIxNDY4NH0.g7jMheL_T_9M884BUoPCOuoZKlexshqRDDspOxxUOwQ"
                 },
                 body: JSON.stringify(payload)
@@ -42,9 +44,7 @@ class CommentsList extends React.Component {
             console.error(error)
             return null
         } finally {
-            let newState = this.state.comments.filter(comment => comment._id !== target)
-            this.setState({ comments: newState })
-            console.log("poof")
+            this.componentDidMount() // no worky
         }
     }
 
