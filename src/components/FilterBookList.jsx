@@ -1,4 +1,6 @@
 import React from "react"
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 import Form from "react-bootstrap/Form"
 import Container from "react-bootstrap/Container"
 import BookList from "./BookList"
@@ -31,7 +33,14 @@ class FilterBookList extends React.Component {
                 </Container>
 
                 <Container fluid>
-                    <BookList books={this.state.search} />
+                    <Row>
+                        <Col className="col-8">
+                            <BookList books={this.state.search} />
+                        </Col>
+                        <Col className="col-4">
+                            <BookList books={this.state.search} />
+                        </Col>
+                    </Row>
                 </Container>
             </>
         )
